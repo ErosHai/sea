@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      background-color: rgb(146, 185, 219);
+      margin: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="200"></canvas>
+
+  <script>
+    const ary = ['a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c']
+
+    const dist = ary => {
+      const result = Array.from(new Set(ary))
+
+      console.log(result)
+    }
+
+    dist(ary)
+
+
+    const ary1 = [{a: 6}, {a: 1}, {a: 5}, {a: 2}];
+
+
+    const filter = ary => {
+      let foo = []
+      let sort
+      let result
+
+      const arr = ary.filter(item => item.a > 1).map(item => {
+        foo.push(item.a)
+        sort = foo.sort()
+        result = sort.join('')
+        return result
+      })
+      console.log(result, 'result');
+    }
+    filter(ary1)
+
+    const wait = time => {
+      setTimeout(() => {
+        const p = new Promise((resolve, reject) => {
+          resolve('xiaoming')
+        })
+
+        p.then(res => {
+          console.log(res);
+        })
+      }, time);
+    }
+
+    wait(2000)
+
+  </script>
+</body>
+
+</html>
